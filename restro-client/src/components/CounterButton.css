@@ -1,0 +1,33 @@
+/* CounterButton styles */
+.counter-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+  }
+  
+  .counter-btn-container button {
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .counter-btn-container button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+  }
+  
+  .counter-btn-container button:active {
+    background-color: #e0e0e0;
+    transform: scale(0.95);
+  }
+  
+  .counter-btn-container span {
+    font-size: 20px;
+    padding: 10px;
+  }

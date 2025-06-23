@@ -1,0 +1,127 @@
+/* Heading Styles */
+.heading {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #ecf0f1;
+  margin: 20px 0; /* Add margin to create some space around the heading */
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase; /* Optional: Make the text uppercase */
+
+  /* 3D effect using text shadow */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), 0px 0px 25px rgba(0, 0, 0, 0.1),
+    0px 0px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #e74c3c, #8e44ad);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Responsive font-size adjustments for heading */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 40px; /* Smaller font size for tablets and medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 38px; /* Further reduce for mobile devices */
+    margin: 15px 0;  /* Adjust margin for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 28px; /* Smaller font for very small screens */
+    margin: 10px 0; /* Reduce margin further */
+  }
+}
+
+/* Main content area */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+}
+
+
+/* Content area */
+.content {
+  flex-grow: 1;
+  margin-left: 8%; /* Space between sidebar and content */
+  margin-top: 0%; /* Adjust the margin-top to move the content closer to the top */
+  background-color: #f4f6f8; /* Light background for content */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Allow scrolling for large content */
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 768px) {
+  .content {
+    padding: 15px;
+    margin-left: 10px; /* Less space for mobile */
+    margin-top: 0%; /* Ensure margin-top stays consistent */
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 10px;
+    margin-left: 5px; /* Even less space on smaller screens */
+    margin-top: 0%; /* Maintain the same margin-top for smaller screens */
+  }
+}
+
+/* Toast Container Styles */
+.Toastify__toast-container {
+  font-size: 14px;
+}
+
+.Toastify__toast {
+  border-radius: 6px;
+  padding: 10px 20px;
+  color: #2ecc71; /* Green background for success messages */
+  background-color: white;
+}
+
+.Toastify__toast--error {
+  color: #e74c3c; ;
+  background-color: white; /* Red background for error messages */
+}
+
+.Toastify__toast--info {
+  background-color: #3498db; /* Blue background for info messages */
+}
+
+.Toastify__toast--warning {
+  color:#f39c12 ;
+  background-color: white; /* Yellow background for warning messages */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    font-size: 12px; /* Smaller font for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .Toastify__toast-container {
+    font-size: 10px; /* Even smaller font for very small screens */
+  }
+}
+
+.content::-webkit-scrollbar {
+  width: 8px;  /* Adjust width */
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);  /* Scrollbar color */
+  border-radius: 10px;
+}
+
+.content::-webkit-scrollbar-track {
+  background-color: #f1f1f1;  /* Track color */
+}

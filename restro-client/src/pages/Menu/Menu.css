@@ -1,0 +1,208 @@
+/* General Styles for the Booking Container and Button */
+.menu-container {
+  max-width: 1200px; /* Limiting the max width for better readability */
+  padding-left: 5%;
+  box-sizing: border-box;
+}
+
+/* Create Booking Button */
+.create-menu-button {
+  width: 20%;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu-search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.search-input-menu{
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 10px;
+  border: 1px solid #d9d9d9;
+}
+
+.select-input-category{
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+
+.create-menu-button:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.create-menu-button .ant-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.create-menu-button .ant-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+}
+
+.create-menu-button .ant-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the Booking Table */
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-table th,
+.menu-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.menu-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.menu-table tr:hover {
+  background-color: #e1f5e3;
+  cursor: pointer;
+}
+
+/* Table Header */
+.menu-table th {
+  color: #333;
+  font-size: 18px;
+}
+
+/* Mobile-First Styles (Smaller Screens) */
+@media (max-width: 767px) {
+  .menu-container {
+    margin: 20px; /* Reduced margin for mobile screens */
+  }
+
+  .create-menu-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Adjust the table layout for small screens */
+  .menu-table {
+    width: 100%;
+    font-size: 12px; /* Smaller font size on mobile */
+    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
+  }
+
+  /* Stack table cells vertically on small screens */
+  .menu-table thead {
+    display: none; /* Hide the header row */
+  }
+
+  .menu-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+  }
+
+  .menu-table td {
+    display: block;
+    text-align: right;
+    padding: 8px;
+    position: relative;
+  }
+
+  .menu-table td::before {
+    content: attr(data-label); /* Add data-labels for each column */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  /* Make table cells appear like cards */
+  .menu-table td {
+    padding-left: 50%; /* Add some space for the label */
+  }
+
+  .menu-table .ant-table-cell {
+    padding: 12px;
+  }
+}
+
+/* Animations for Buttons */
+@keyframes buttonBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.create-menu-button .ant-btn {
+  animation: buttonBounce 0.6s ease infinite;
+}
+
+/* Styling for Modal */
+.modal-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Styling for Table Rows */
+.menu-table .ant-table-row:hover {
+  background-color: #d4f0d6; /* Soft hover background */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu-table .ant-table-row:active {
+  background-color: #c5e8c1; /* Darker active row color */
+}
+
+/* Making the page layout responsive */
+@media (min-width: 768px) {
+  .menu-table {
+    table-layout: fixed;
+  }
+  .menu-table th,
+  .menu-table td {
+    padding: 12px 16px;
+  }
+}

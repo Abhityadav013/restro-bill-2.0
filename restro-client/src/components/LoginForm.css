@@ -1,0 +1,70 @@
+.login-box{
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.login-subtitle{
+    margin: auto;
+}
+
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Spacing between the line and the text */
+  }
+  
+  .line {
+    flex: 1; /* Make the line grow to fill available space */
+    height: 1px;
+    background-color: #d9d9d9;
+    border: none;
+  }
+  
+  .center-text {
+    font-size: 14px;
+    color: black; /* Adjust to your text color preference */
+    margin: 10px; /* Remove default margin */
+    font-weight: bold;
+  }
+
+  /* Ensure prefix aligns vertically with input */
+.ant-input-affix-wrapper {
+  display: flex;
+  align-items: center; /* Vertically aligns content */
+  padding: 0 8px; /* Add horizontal padding */
+  height: 40px; /* Consistent height */
+  line-height: 40px; /* Aligns text and placeholder */
+}
+
+/* Ensure icon aligns with text */
+.ant-input-prefix {
+  margin-right: 8px; /* Add space between icon and text */
+  font-size: 16px; /* Match text size */
+  color: #888; /* Neutral color for icon */
+  display: flex;
+  align-items: center;
+}
+
+/* Input field adjustments */
+.ant-input {
+  height: 40px; /* Consistent height */
+  line-height: 40px; /* Center text and placeholder */
+  padding-left: 0; /* Reset internal padding */
+  font-size: 14px; /* Adjust font size */
+  margin-block: auto;
+  margin-left: 5px;
+}
+
+input:-webkit-autofill {
+  
+  background-color: #fff !important; /* Custom background */
+  color: #000 !important; /* Custom text color */
+  border: 2px solid #000000; /* Custom border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 5000s ease-in-out 0s; /* Smooth autofill transition */
+  height: auto;
+}
+
+
+  

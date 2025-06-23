@@ -1,0 +1,162 @@
+.booking-form-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Form Layout */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;  /* Align items in a row */
+  align-items: center;  /* Center the label and input field vertically */
+  flex-wrap: wrap; /* Ensures that the form fields wrap correctly when needed */
+}
+
+.booking-form-container {
+  position: relative; /* Make sure it's positioned properly */
+  z-index: 10;
+}
+
+/* Apply a higher z-index to the Ant Design dropdown */
+.ant-select-dropdown {
+  z-index: 9999; /* Make sure the dropdown appears above other modal content */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #333;
+  width: 30%; /* Set label width to 30% */
+  margin-right: 10px; /* Space between label and input */
+}
+
+/* Form Input Styling */
+.form-input {
+  width: 60%; /* Set input fields to take up 70% of the space */
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+}
+
+/* Time Selector */
+.time-selector {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 60px;
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.time-selector .ant-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  width: 80%;
+}
+
+.colon {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Error Messages */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.submit-button:active {
+  background-color: #388e3c;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  /* Keep label and input on the same line */
+  .form-group {
+    flex-direction: row; /* Keep items in a row on mobile */
+  }
+
+  label {
+    width: 30%; /* Maintain 30% width for label */
+    margin-bottom: 0; /* Remove bottom margin for consistency */
+  }
+
+  .form-input {
+    width: 40%; /* Keep inputs on the same line */
+  }
+
+  .time-selector {
+    width: 40%; /* Adjust time selector width */
+  }
+
+  .time-selector .ant-select {
+    width: 70%; /* Full width for time dropdowns */
+  }
+
+  .submit-button {
+    width: 100%; /* Make the submit button full-width */
+  }
+}
+
+/* Additional Adjustments for Very Small Screens (Mobile-first styling) */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 20px; /* Adjust header font size */
+    margin-bottom: 20px; /* Reduced margin for smaller screens */
+  }
+
+  .booking-form-container {
+    padding: 15px; /* Smaller padding for mobile */
+    max-width: 80%;
+  }
+
+  .form-input,
+  .time-selector {
+    font-size: 14px; /* Slightly smaller text for input fields */
+  }
+
+  .submit-button {
+    font-size: 14px; /* Slightly smaller text for buttons */
+    padding: 10px;
+  }
+}

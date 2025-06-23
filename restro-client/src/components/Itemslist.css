@@ -1,0 +1,115 @@
+/* ItemList.css */
+
+/* General container */
+.item-list-container {
+    padding: 24px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Search bar */
+  .ant-input {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .itemlist-category{
+    height: 41px;
+  }
+  
+  /* List item */
+  .ant-list-item {
+    border-radius: 8px;
+    background-color: #fff;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .ant-list-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .ant-list-item .ant-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Item description and price */
+  .ant-list-item .ant-col span {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .item-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Button styling */
+  .ant-btn {
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+  }
+  
+  .ant-btn-default {
+    background-color: #f0f0f0;
+    border-color: #d9d9d9;
+  }
+  
+  .ant-btn-primary:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+  
+  .ant-btn-default:hover {
+    background-color: #e6e6e6;
+    border-color: #d9d9d9;
+  }
+  
+  /* InputNumber styling */
+  .ant-input-number {
+    width: 80px;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Payload section */
+  .payload-list {
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payload-list h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333;
+  }
+  
+  .remove-btn {
+    color: #ff4d4f;
+    font-weight: bold;
+  }
+  
+  /* Centering content */
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }

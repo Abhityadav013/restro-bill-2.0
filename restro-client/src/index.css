@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* Disable scrollbars on the whole page */
+html, body {
+  overflow: hidden;
+  height: 100%; /* Ensure the body takes full height */
+}
+.sidebar {
+  overflow: hidden;  /* Disables both vertical and horizontal scrollbars */
+}
+
+/* You can use the same approach for any other element, for example: */
+.table-container {
+  overflow: hidden;  /* Disable scroll on this container */
+}

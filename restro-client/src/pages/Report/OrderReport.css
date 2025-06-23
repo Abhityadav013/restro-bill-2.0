@@ -1,0 +1,307 @@
+/* OrderReport.css */
+.order-report-container {
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+}
+
+.order-report-container:hover {
+  transform: translateY(-10px); /* Adds a subtle hover effect */
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  perspective: 1500px; /* Adds 3D perspective */
+}
+
+.filter-buttons .ant-btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-buttons .ant-btn {
+  position: relative;
+  background-color: #fff;
+  border: 2px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+/* Add a selected class that will highlight the selected filter button */
+.filter-buttons .ant-btn.selected {
+  color: black;
+  border-color: #1890ff;
+}
+
+.filter-buttons .ant-btn:hover {
+  transform: rotateY(10deg); /* Subtle 3D effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #e6f7ff; /* Highlight button on hover */
+}
+
+.custom-date-row {
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-out;
+}
+
+.custom-date-row:hover {
+  transform: scale(1.05);
+}
+
+.payment-tabs-row {
+  margin-bottom: 30px;
+}
+.total-order{
+  margin-bottom: 30px;
+}
+.total-order-container {
+  display: flex; /* Enable Flexbox layout */
+  justify-content: space-between; /* Place elements on opposite sides of the container */
+  align-items: center; /* Vertically align items in the center */
+  font-size: 16px; /* Set font size */
+  font-weight: bold; /* Make text bold */
+}
+.order-type-tabs-row {
+  margin-bottom: 30px;
+}
+
+.payment-tabs-row .ant-tabs {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-out;
+  padding: 8px;
+}
+.total-order .ant-tabs{
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+  padding: 8px;
+}
+
+.order-type-tabs-row .ant-tabs {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+  padding: 8px;
+}
+
+.payment-tabs-row .ant-tabs:hover {
+  transform: scale(1.03);
+}
+
+.order-type-tabs-row .ant-tabs:hover {
+  transform: scale(1.03);
+}
+
+.orders-table {
+  margin-top: 30px;
+}
+
+.ant-table-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+}
+
+/* .ant-table-wrapper:hover {
+  transform: scale(1.02);
+} */
+
+.ant-table-thead > tr > th {
+  background-color: #f0f2f5;
+  color: #666;
+  font-weight: bold;
+}
+
+.ant-table-tbody > tr > td {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: #f0f2f5; /* Highlight rows on hover */
+}
+
+.ant-pagination-total-text {
+  margin-right: 45px; /* Adds margin to the right side */
+}
+
+.ant-pagination {
+  display: flex;
+  justify-content: flex-start; /* Align pagination to the left */
+  margin-right: 15px !important;  /* Ensures the pagination is not right-aligned */
+}
+
+.single-month-picker .ant-picker-panels {
+  display: flex;
+  justify-content: center; /* Centers the single calendar */
+}
+
+.single-month-picker .ant-picker-panels > *:nth-child(2) {
+  display: none; /* Hides the second month panel */
+}
+
+/* Align payment method and order type in a single row */
+.payment-order-row {
+  display: flex;
+  justify-content: center; /* Distribute the space evenly */
+  gap: 20px; /* Add space between payment method and order type */
+  margin-bottom: 30px;
+  align-items: center; /* Vertically align them in the center */
+}
+
+/* Ensure that both payment method and order type have consistent styling */
+.payment-order-row .payment-method,
+.payment-order-row .order-type {
+  flex: 1; /* Makes both sections take equal space */
+  text-align: center; /* Center the content inside */
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+}
+
+.payment-order-row .payment-method:hover,
+.payment-order-row .order-type:hover {
+  transform: scale(1.03);
+}
+
+.payment-order-row .payment-method {
+  background-color: #e6f7ff;
+}
+
+.payment-order-row .order-type {
+  background-color: #f7e6ff;
+}
+
+/* Media Queries for Tablet */
+@media (max-width: 1024px) {
+  /* Container padding for tablets */
+  .order-report-container {
+    padding: 30px;
+  }
+
+  /* Filter buttons alignment and spacing */
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  /* Button size adjustment for smaller screens */
+  .filter-buttons .ant-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .custom-date-row,
+  .payment-tabs-row,
+  .order-type-tabs-row
+  .total-order {
+    text-align: center;
+  }
+
+  /* Adjusting table padding and layout for small screens */
+  .ant-table-wrapper {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .ant-table-thead > tr > th {
+    font-size: 12px;
+  }
+
+  .ant-table-tbody > tr > td {
+    font-size: 14px;
+  }
+
+  .ant-table-tbody > tr:hover > td {
+    background-color: #f9fafb; /* Lighten hover color on tablet */
+  }
+
+  .ant-pagination {
+    justify-content: center; /* Center pagination on tablets */
+    margin-right: 0; /* Remove right margin */
+  }
+
+  .ant-pagination-total-text {
+    margin-right: 0; /* No margin for smaller screens */
+  }
+
+  /* Stack payment method and order type vertically on tablets */
+  .payment-order-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .payment-order-row .payment-method,
+  .payment-order-row .order-type {
+    margin-bottom: 15px; /* Add space between them */
+  }
+}
+
+/* Media Queries for smaller tablets or mobile */
+@media (max-width: 768px) {
+  /* Container padding for smaller tablets */
+  .order-report-container {
+    padding: 15px;
+  }
+
+  /* Stack filter buttons vertically */
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-date-row,
+  .payment-tabs-row,
+  .order-type-tabs-row 
+  .total-order{
+    text-align: center;
+  }
+
+  /* Adjust button sizes and spacing for smaller screens */
+  .filter-buttons .ant-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  /* Adjust table font sizes for readability on smaller screens */
+  .ant-table-wrapper {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .ant-table-thead > tr > th {
+    font-size: 12px;
+  }
+
+  .ant-table-tbody > tr > td {
+    font-size: 13px;
+  }
+
+  .ant-pagination {
+    justify-content: center;
+    margin-right: 0; /* Remove margin */
+  }
+
+  .ant-pagination-total-text {
+    margin-right: 0; /* Remove right margin for smaller screens */
+  }
+}

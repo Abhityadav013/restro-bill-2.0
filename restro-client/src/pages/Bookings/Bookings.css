@@ -1,0 +1,188 @@
+/* General Styles for the Booking Container and Button */
+.booking-container {
+  max-width: 1200px; /* Limiting the max width for better readability */
+  padding-left: 5%;
+  box-sizing: border-box;
+}
+
+/* Create Booking Button */
+.create-booking-button {
+  width: 20%;
+  margin-bottom: 20px;
+  margin-top: 2%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.create-booking-button:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.create-booking-button .ant-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.create-booking-button .ant-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+}
+
+.create-booking-button .ant-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.days-left-column{
+  font-weight: bold;
+}
+/* Styles for the Booking Table */
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.booking-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.booking-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.booking-table tr:hover {
+  background-color: #e1f5e3;
+  cursor: pointer;
+}
+
+/* Table Header */
+.booking-table th {
+  color: #333;
+  font-size: 18px;
+}
+
+/* Mobile-First Styles (Smaller Screens) */
+@media (max-width: 767px) {
+  .booking-container {
+      margin: 20px; /* Reduced margin for mobile screens */
+  }
+
+  .create-booking-button {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  /* Adjust the table layout for small screens */
+  .booking-table {
+      width: 100%;
+      font-size: 12px; /* Smaller font size on mobile */
+      overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
+  }
+
+  /* Stack table cells vertically on small screens */
+  .booking-table thead {
+      display: none; /* Hide the header row */
+  }
+
+  .booking-table tr {
+      display: block;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+  }
+
+  .booking-table td {
+      display: block;
+      text-align: right;
+      padding: 8px;
+      position: relative;
+  }
+
+  .booking-table td::before {
+      content: attr(data-label); /* Add data-labels for each column */
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+  }
+
+  /* Make table cells appear like cards */
+  .booking-table td {
+      padding-left: 50%; /* Add some space for the label */
+  }
+
+  .booking-table .ant-table-cell {
+      padding: 12px;
+  }
+}
+
+/* Animations for Buttons */
+@keyframes buttonBounce {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.create-booking-button .ant-btn {
+  animation: buttonBounce 0.6s ease infinite;
+}
+
+/* Styling for Modal */
+.modal-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Styling for Table Rows */
+.booking-table .ant-table-row:hover {
+  background-color: #d4f0d6; /* Soft hover background */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.booking-table .ant-table-row:active {
+  background-color: #c5e8c1; /* Darker active row color */
+}
+
+/* Making the page layout responsive */
+@media (min-width: 768px) {
+  .booking-table {
+      table-layout: fixed;
+  }
+  .booking-table th,
+  .booking-table td {
+      padding: 12px 16px;
+  }
+}
+

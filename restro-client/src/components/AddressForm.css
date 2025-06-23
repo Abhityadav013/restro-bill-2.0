@@ -1,0 +1,131 @@
+/* Form container */
+.address-form {
+  max-width: 600px;
+  margin: 0;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Group container for each field */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.form-label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  display: block;
+}
+
+/* Specific styling for AddressForm input fields */
+.address-form .form-input {
+  width: calc(50%); /* Increase width by 30px */
+  padding: 8px; /* Add padding for better spacing */
+  font-size: 14px; /* Set font size */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Optional: Add styling for focus state */
+.address-form .form-input:focus {
+  outline: none;
+  border-color: #4d90fe; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(77, 144, 254, 0.6); /* Add shadow effect */
+}
+
+/* Optional: Error message styling */
+.address-form .error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+/* Input field styles */
+.form-input {
+  width: calc(100% + 30px); /* Increase width by 30px */
+  padding: 8px; /* Add padding for better spacing */
+  font-size: 14px; /* Set font size */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Focus state for input fields */
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* Submit button */
+.submit-button {
+  display: inline-block;
+  width: 100%;
+  padding: 14px 0;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+/* Submit button hover effect */
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .address-form {
+    padding: 20px;
+  }
+
+  .form-input {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    font-size: 16px;
+  }
+}
+
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  position: absolute;
+  background-color: white;
+  width: 30%;
+  z-index: 100;
+}
+
+.suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}

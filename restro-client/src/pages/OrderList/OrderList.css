@@ -1,0 +1,210 @@
+/* General Table Styling */
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 60px;
+  width: 100%;
+  max-width: 1200px; /* Maximum width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.table-container {
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow-x: auto; /* Ensure horizontal scroll for smaller screens */
+}
+
+.table-container .ant-table {
+  width: 100%;
+  table-layout: auto; /* Ensures table columns resize dynamically */
+}
+
+.table-container .ant-table th {
+  background-color: #f1f1f1;
+}
+
+.table-container .ant-table-tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Heading Styling */
+.list-page-heading {
+  font-size: 2.5rem; /* Slightly bigger heading */
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase; /* Make it more prominent */
+  letter-spacing: 1px; /* Add some spacing for style */
+}
+
+/* Search Box Styling */
+.search-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between the input and button */
+  margin: 20px auto; /* Center horizontally with margin */
+  width: 100%;
+  max-width: 500px; /* Restrict maximum width */
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.search-input {
+  flex: 1; /* Allow input to take up available space */
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 5px rgba(24, 144, 255, 0.3);
+}
+
+.search-button {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #1890ff;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #40a9ff;
+}
+
+.search-button:active {
+  background-color: #096dd9;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Devices with screen widths between 768px and 1024px (e.g., Surface Book 7 in tablet mode or similar) */
+@media (max-width: 1024px) {
+  .table-container {
+    padding: 0 15px; /* Reduce the padding to fit the table properly */
+  }
+
+  .table-container .ant-table {
+    table-layout: fixed; /* Ensures that the table resizes properly */
+    width: 100%;
+  }
+
+  .table-container .ant-table td,
+  .table-container .ant-table th {
+    font-size: 1rem; /* Adjust the font size for readability */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .list-page-heading {
+    font-size: 2rem; /* Make the heading smaller for tablets */
+  }
+
+  /* Ensure search box doesn't stretch too much */
+  .search-box-container {
+    max-width: 100%; /* Allow it to take full width */
+    padding: 10px; /* Slight padding */
+  }
+
+  .search-input {
+    font-size: 14px; /* Adjust input font size */
+  }
+
+  .search-button {
+    font-size: 14px; /* Adjust button size */
+  }
+
+  /* Adjust button sizes and layouts for tablet-like screens */
+  .place-order-btn-container {
+    flex-direction: column; /* Stack buttons vertically on tablets */
+    gap: 10px;
+  }
+
+  .place-order-btn.booking-order-btn,
+  .place-order-btn.place-order-btn,
+  .download-excel-btn {
+    width: 100%; /* Full width buttons */
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Additional media query for devices smaller than 768px (smartphones) */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 0 10px; /* Adjust table container padding */
+  }
+
+  .table-container .ant-table th,
+  .table-container .ant-table td {
+    font-size: 0.9rem; /* Slightly reduce font size */
+    padding: 8px; /* Reduce padding */
+  }
+
+  .list-page-heading {
+    font-size: 1.8rem;
+  }
+
+  .place-order-btn-container {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+
+  .place-order-btn.booking-order-btn,
+  .place-order-btn.place-order-btn,
+  .download-excel-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+.ant-pagination {
+  display: flex;
+  justify-content: flex-start; /* Align pagination to the left */
+  margin-right: 15px !important;  /* Ensures the pagination is not right-aligned */
+}
+/* For very small devices (e.g., phones) */
+@media (max-width: 480px) {
+  .table-container .ant-table th,
+  .table-container .ant-table td {
+    font-size: 0.8rem; /* Further reduce font size */
+    padding: 6px; /* Reduce padding */
+  }
+
+  .list-page-heading {
+    font-size: 1.6rem;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  .search-button {
+    font-size: 14px;
+  }
+
+  .place-order-btn.booking-order-btn,
+  .place-order-btn.place-order-btn,
+  .download-excel-btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+.table-container .ant-table td {
+  word-wrap: break-word;
+}
