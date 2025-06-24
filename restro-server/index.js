@@ -25,6 +25,8 @@ const io = new Server(server, {
     origin: [
       "http://localhost:3001", // Next.js client
       "http://localhost:3000", // React admin client
+      "https://restro-bill-client.vercel.app",
+      "https://staging.indiantadka.eu/de"
       // ...other allowed origins
     ],
     methods: ["GET", "POST"],
@@ -97,6 +99,8 @@ app.use(cors
     origin: function (origin, callback) {
         const allowedOrigins = [
             'https://admindashboard.indiantadka.eu',
+            'https://restro-bill-client.vercel.app',
+            "https://staging.indiantadka.eu/de",
             'http://localhost:3000',
             'http://localhost:3001',
             'https://testing.indiantadka.eu',
