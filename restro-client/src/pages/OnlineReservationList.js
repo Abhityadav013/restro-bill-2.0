@@ -41,7 +41,7 @@ const OnlineReservationList = () => {
         console.log('🔌 Setting up socket listeners in dashboard...');
         
         // Connect to the socket (SocketInitializer in layout already initialized the server)
-        socket = io('http://localhost:8080');
+        socket = io(process.env.REACT_APP_API_SOCKET_URL);
 
         socket.on('connect', () => {
           console.log('✅ Socket.IO: Connected to order updates', socket.id);
