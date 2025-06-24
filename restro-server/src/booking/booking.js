@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Booking = require("./model/booking.model");
 const { authMiddleware } = require("../auth/auth");
+const Reservation = require('./model/reservation.model');
 /**
  * @swagger
  * /api/reservations:
@@ -227,7 +228,14 @@ router.delete("/reservations/:id", authMiddleware ,async (req, res) => {
   }
 });
 
-
-
+// GET /api/online-reservations - returns all user-made reservations, sorted by reservationDateTime descending
+router.get('/online-reservations', async (req, res) => {
+  try {
+    const reservations = await Reservation.find().sort({ reservationDateTime: -1 });
+    res.status(200).json(reservations);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching online reservations', error: error.message });
+  }
+});
 
 module.exports = router;

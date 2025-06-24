@@ -3,7 +3,7 @@ import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { MdRestaurant } from "react-icons/md";
 import { FiCalendar } from "react-icons/fi";
-import { FaBars, FaTimes } from "react-icons/fa"; // Hamburger menu
+import { FaBars, FaTimes, FaUsers } from "react-icons/fa"; // Hamburger menu
 import "./Sidebar.css";
 import BookingForm from "./BookingForm";
 import Modal from "./Modal";
@@ -80,6 +80,11 @@ const Sidebar = ({onLogout}) => {
     toggleSidebar();
   };
 
+  const handleOnlineReservations = () => {
+    navigate('/online-reservations');
+    toggleSidebar();
+  };
+
   return (
     <div>
       <div className="hamburger-icon" onClick={toggleSidebar}>
@@ -109,6 +114,9 @@ const Sidebar = ({onLogout}) => {
         </Button>
         <Button className="sidebar-btn" icon={<TbReport />} onClick={() => handleReport()}>
           <span className="sidebar-text">Report</span>
+        </Button>
+        <Button className="sidebar-btn" icon={<FaUsers />} onClick={handleOnlineReservations}>
+          <span className="sidebar-text">Online Reservations</span>
         </Button>
         <Button className="sidebar-btn logout-btn" icon={<RiLogoutBoxLine />} onClick={onLogout}>
           <span className="sidebar-text">Logout</span>

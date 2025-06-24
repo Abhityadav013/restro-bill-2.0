@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100px; /* Default width for larger screens */
+  width: 120px; /* Increased by 20px */
   height: 100%;
   background-color: #2c3e50;
   background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
@@ -75,10 +75,14 @@
 /* Text below the icons */
 .sidebar-text {
   display: block;
-  font-size: 12px; /* Smaller text size */
+  font-size: 12px;
   font-weight: 700;
   color: white;
-  text-align: center; /* Center the text */
+  text-align: center;
+  word-break: break-word;
+  max-width: 80px;
+  white-space: normal;
+  line-height: 1.2;
 }
 
 /* Media Queries for Responsive Design */
@@ -128,7 +132,7 @@
   }
 
   .sidebar.visible {
-    width: 100px; /* Narrow sidebar on small screens */
+    width: 120px; /* Increased by 20px for mobile visible sidebar */
   }
 
   .hamburger-icon {
@@ -145,7 +149,7 @@
 /* Large Screens (Desktop) */
 @media (min-width: 1024px) {
   .sidebar {
-    width: 100px; /* Fixed sidebar width */
+    width: 120px; /* Increased by 20px for desktop */
   }
 
   .sidebar-btn {

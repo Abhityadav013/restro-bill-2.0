@@ -1,0 +1,68 @@
+.online-reservation-list-container {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.online-reservation-title {
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.online-reservation-table .ant-table-thead > tr > th {
+  background: #f7f7fa;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.online-reservation-table .ant-table-tbody > tr > td {
+  text-align: center;
+  font-size: 13px;
+}
+
+.online-reservation-spin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+}
+
+.draft-reservation-row {
+  background: #fffbe6 !important;
+  border-left: 4px solid #ffd700 !important;
+}
+
+.online-reservation-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.online-reservation-checkbox {
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .online-reservation-list-container {
+    padding: 8px;
+    margin: 8px;
+  }
+  .online-reservation-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .online-reservation-table .ant-table-thead > tr > th,
+  .online-reservation-table .ant-table-tbody > tr > td {
+    font-size: 12px;
+    padding: 6px;
+  }
+} 

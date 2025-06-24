@@ -119,10 +119,11 @@ export default function OrderForm({
   }, []);
 
   const columns = [
-    { title: "Item Id", dataIndex: "itemId" },
-    { title: "Item Name", dataIndex: "itemName" },
+    { title: <span style={{ fontWeight: 'bold', fontSize: 12, textAlign: 'center' }}>Item Id</span>, dataIndex: "itemId", align: 'center' },
+    { title: <span style={{ fontWeight: 'bold', fontSize: 12, textAlign: 'center' }}>Item Name</span>, dataIndex: "itemName", align: 'center' },
     {
-      title: "Quantity",
+      title: <span style={{ fontWeight: 'bold', fontSize: 12, textAlign: 'center' }}>Quantity</span>,
+      align: 'center',
       render: (_, record) => (
         <CounterButton
           value={record.quantity}
@@ -132,8 +133,9 @@ export default function OrderForm({
       ),
     },
     {
-      title: "Price",
+      title: <span style={{ fontWeight: 'bold', fontSize: 12, textAlign: 'center' }}>Price</span>,
       dataIndex: "price",
+      align: 'center',
       render: (_, record) => (
         <Input
           value={record.price}
@@ -144,14 +146,16 @@ export default function OrderForm({
       ),
     },
     {
-      title: "Total Price",
+      title: <span style={{ fontWeight: 'bold', fontSize: 12, textAlign: 'center' }}>Total Price</span>,
       dataIndex: "totalPrice",
+      align: 'center',
       render: (_, record) => (
-        <span>{(record.quantity * record.price).toFixed(2)}</span> // Display total price based on qty * unitPrice
+        <span>{(record.quantity * record.price).toFixed(2)}</span>
       ),
     },
     {
-      title: "Actions",
+      title: <span style={{ fontWeight: 'bold', fontSize: 12, textAlign: 'center' }}>Actions</span>,
+      align: 'center',
       render: (_, record) => (
         <Button
           danger
@@ -274,7 +278,7 @@ export default function OrderForm({
         {!pickupOrder && !onlineOrder && (
           <div className="table-selection-container">
             <h4 className="table-selection-label">Select Table Number</h4>
-            <Row gutter={[12, 12]}>{generateTableGrid()}</Row>
+            <Row  style={{ marginBottom: 20 }} gutter={[12, 12]}>{generateTableGrid()}</Row>
             <Input
               value={tableNumber}
               onChange={(e) => setTableNumber(e.target.value)}
@@ -296,8 +300,7 @@ export default function OrderForm({
           </div>
         )}
 
-        <div className="table-container">
-          {/* Action Buttons (Positioned at Top-Right) */}
+        <div className="table-container-order-form">
           <div className="action-buttons-container">
             <Button
               type="primary"
@@ -317,14 +320,13 @@ export default function OrderForm({
               {isSubmitting ? "Submitting..." : "Submit"}
             </Button>
           </div>
-
-          {/* Order Items Table */}
           <Table
             columns={columns}
             dataSource={orderItems}
             rowKey="itemId"
-            scroll={{ x: "max-content" }}
+            scroll={{ x: "max-content", y: 350 }}
             className="order-items-table"
+            pagination={false}
           />
         </div>
       </div>

@@ -10,11 +10,41 @@ const authRoutes = require('./src/auth/auth').router; // Import admin authentica
 const { authMiddleware } = require('./src/auth/auth'); // Import middleware for protecting routes
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+const { io: ClientIO } = require('socket.io-client');
+const http = require('http');
+const { Server } = require('socket.io');
 
 // Load environment variables from .env file
 dotenv.config();
 
 const app = express();
+const server = http.createServer(app);
+
+const io = new Server(server, {
+  cors: {
+    origin: [
+      "http://localhost:3001", // Next.js client
+      "http://localhost:3000", // React admin client
+      // ...other allowed origins
+    ],
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+});
+
+io.on('connection', (socket) => {
+  console.log('Frontend or Next.js client connected:', socket.id);
+
+  // Listen for new-online-booking from Next.js
+  socket.on('new-online-booking', (reservation) => {
+    console.log('Received new-online-booking from Next.js:', reservation);
+
+    // Broadcast to all connected React clients
+    io.emit('newBookingReceived', reservation);
+  });
+
+  // (Optional) Listen for other events as needed
+});
 
 // Swagger setup
 const swaggerOptions = {
@@ -68,6 +98,7 @@ app.use(cors
         const allowedOrigins = [
             'https://admindashboard.indiantadka.eu',
             'http://localhost:3000',
+            'http://localhost:3001',
             'https://testing.indiantadka.eu',
             'https://theindiantadka.vercel.app',
         ];
@@ -108,6 +139,34 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Start the server
 const port = process.env.PORT || 8080;
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
+// // Replace with your Next.js server's Socket.IO URL
+// const NEXTJS_SOCKET_URL = 'http://localhost:3001'; // or your deployed Next.js server
+
+// // Connect as a client to the Next.js server
+// const nextSocket = ClientIO(NEXTJS_SOCKET_URL, {
+//   transports: ['websocket'],
+//   reconnection: true,
+// });
+
+// nextSocket.on('connect', () => {
+//   console.log('Connected to Next.js Socket.IO server as client');
+// });
+
+// // Listen for reservation:new event from Next.js
+// nextSocket.on('reservation:new', (reservation) => {
+//   console.log('Received reservation:new from Next.js:', reservation);
+//   io.emit('newBookingReceived', reservation);
+// });
+
+// // (Optional) Listen for other events as needed
+// nextSocket.on('booking-status-updated', (reservation) => {
+//   io.emit('bookingStatusUpdated', reservation);
+// });
+
+// nextSocket.on('disconnect', () => {
+//   console.log('Disconnected from Next.js Socket.IO server');
+// });

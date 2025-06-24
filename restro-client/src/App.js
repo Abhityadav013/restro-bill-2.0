@@ -13,6 +13,7 @@ import OrderReport from "./pages/Report/OrderReport";
 import Login from "./pages/Login/Login";
 import { useEffect, useState } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
+import OnlineReservationList from './pages/OnlineReservationList';
 
 
 function App() {
@@ -80,6 +81,9 @@ function App() {
           <Route path="/report" element={ <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <OrderReport />
               </ProtectedRoute>} />
+          <Route path="/online-reservations" element={<ProtectedRoute isAuthenticated={isAuthenticated}>
+            <OnlineReservationList />
+          </ProtectedRoute>} />
         </Routes>
       </div>
       <ToastContainer
